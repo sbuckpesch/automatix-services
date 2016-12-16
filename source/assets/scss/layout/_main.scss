@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    Footer
+\*------------------------------------*/
+
+/*Footer*/
+main {
+  & > .container {
+    padding-top: $navbar-height;
+    background: #fff;
+    -webkit-box-shadow: -2px 2px 11px -1px rgba(235, 235, 235, 1);
+    -moz-box-shadow: -2px 2px 11px -1px rgba(235, 235, 235, 1);
+    box-shadow: -2px 2px 11px -1px rgba(235, 235, 235, 1);
+  }
+}
+
+.desktop {
+  .img-slider {
+    @include img-fluid();
+    min-height: 355px;
+  }
+}
+
+.tablet {
+  .img-slider {
+    max-height: 300px;
+  }
+  /*Footer*/
+  main {
+    & > .container {
+      padding-top: calc(#{$navbar-height} + 40px);
+    }
+  }
+}
+
+.mobile {
+  .img-slider {
+    max-height: 350px;
+  }
+}
+
+.bg-brand-gray-light {
+  background: $brand-grey-light;
+}
+
+.clickable {
+  cursor: pointer;
+}

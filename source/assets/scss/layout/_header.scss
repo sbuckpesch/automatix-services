@@ -1,0 +1,86 @@
+/*------------------------------------*\
+    Header
+\*------------------------------------*/
+
+.navbar {
+  padding: 0;
+  & > .container {
+    background: #fff;
+    min-height: $navbar-height;
+    padding: 1rem;
+    -webkit-transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -ms-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    transition-duration: .5s;
+    font-size: 1.2rem;
+  }
+  .navbar-brand {
+    width: 30%;
+
+    a:focus, a:hover {
+      text-decoration: none !important;
+    }
+
+    .logo1 {
+      max-width:23%;
+    }
+    .logo2 {
+      max-width:67%;
+    }
+  }
+}
+
+// Expanded
+.navbar-contracted .navbar > .container {
+  min-height: $navbar-contracted-height;
+  padding: 0.5rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.098) 0 15px 30px -15px, rgba(0, 0, 0, 0.4) 0px 3px 6px -3px;
+  font-size: 1rem;
+  .navbar-brand {
+    width: 25%;
+  }
+}
+
+.navbar-nav {
+  .nav-item {
+    &.active .nav-link {
+      border-bottom: 1px solid $brand-primary;
+    }
+    .nav-link {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 0;
+      margin-bottom: .425rem;
+      @include hover-focus-active {
+        border-bottom: 1px solid $brand-primary;
+      }
+    }
+  }
+}
+
+/* Responsive settings */
+@media (min-width: map_get($grid-breakpoints, 'xs')) and (max-width: map_get($grid-breakpoints, 'sm')) {
+  .navbar-brand {
+    width: 60% !important;
+  }
+  .navbar > .container {
+    min-height: 50px !important;
+  }
+  main > .container {
+    padding-top: 50px !important;
+  }
+}
+@media (min-width: map_get($grid-breakpoints, 'sm')) and (max-width: map_get($grid-breakpoints, 'md')) {
+
+}
+@media (min-width: map_get($grid-breakpoints, 'md')) and (max-width: map_get($grid-breakpoints, 'lg')) {
+
+}
+@media (min-width: map_get($grid-breakpoints, 'lg')) and (max-width: map_get($grid-breakpoints, 'xl')) {
+
+}
+
+@media (min-width: map_get($grid-breakpoints, 'xl'))  {
+
+}

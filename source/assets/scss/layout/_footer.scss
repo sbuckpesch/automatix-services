@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    Footer
+\*------------------------------------*/
+
+/*Footer*/
+footer {
+  background: $brand-secondary;
+  color: $gray-lightest;
+  font-size: 90%;
+
+  .nav {
+    a.nav-link {
+      color: $gray-lightest;
+    }
+    a.nav-link:hover {
+      color: darken($gray-lightest, 10%);
+    }
+  }
+
+  .social-nav > a {
+    color: white;
+    font-size: $font-size-h1;
+    &:hover {
+      color: white;
+    }
+  }
+
+}

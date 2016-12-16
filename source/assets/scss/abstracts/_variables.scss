@@ -1,0 +1,49 @@
+/**
+ * Pattern Dependencies
+ */
+@import 'https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700';
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700';
+@import "variables_bootstrap";
+@import "variables_font-awesome";
+
+/*=========================================================================
+  Variable definitions
+ ========================================================================== */
+
+// Brand colors
+
+$brand-primary-90: lighten($brand-primary, lightness($brand-primary) * 0.1);
+$brand-primary-80: lighten($brand-primary, lightness($brand-primary) * 0.2);
+$brand-primary-70: lighten($brand-primary, lightness($brand-primary) * 0.3);
+$brand-primary-60: lighten($brand-primary, lightness($brand-primary) * 0.4);
+$brand-primary-50: lighten($brand-primary, lightness($brand-primary) * 0.5);
+$brand-primary-40: lighten($brand-primary, lightness($brand-primary) * 0.6);
+$brand-primary-30: lighten($brand-primary, lightness($brand-primary) * 0.7);
+$brand-primary-20: lighten($brand-primary, lightness($brand-primary) * 0.8);
+$brand-primary-10: lighten($brand-primary, lightness($brand-primary) * 0.9);
+
+$brand-secondary-90: lighten($brand-secondary, lightness($brand-secondary) * 0.1);
+$brand-secondary-80: lighten($brand-secondary, lightness($brand-secondary) * 0.2);
+$brand-secondary-70: lighten($brand-secondary, lightness($brand-secondary) * 0.3);
+$brand-secondary-60: lighten($brand-secondary, lightness($brand-secondary) * 0.4);
+$brand-secondary-50: lighten($brand-secondary, lightness($brand-secondary) * 0.5);
+$brand-secondary-40: lighten($brand-secondary, lightness($brand-secondary) * 0.6);
+$brand-secondary-30: lighten($brand-secondary, lightness($brand-secondary) * 0.7);
+$brand-secondary-20: lighten($brand-secondary, lightness($brand-secondary) * 0.8);
+$brand-secondary-10: lighten($brand-secondary, lightness($brand-secondary) * 0.9);
+
+$brand-success-80: lighten($brand-success, lightness($brand-success) * 0.2);
+$brand-success-60: lighten($brand-success, lightness($brand-success) * 0.4);
+$brand-success-40: lighten($brand-success, lightness($brand-success) * 0.6);
+
+$brand-warning-80: lighten($brand-warning, lightness($brand-warning) * 0.2);
+$brand-warning-60: lighten($brand-warning, lightness($brand-warning) * 0.4);
+$brand-warning-40: lighten($brand-warning, lightness($brand-warning) * 0.6);
+
+$brand-danger-80: lighten($brand-danger, lightness($brand-danger) * 0.2);
+$brand-danger-60: lighten($brand-danger, lightness($brand-danger) * 0.4);
+$brand-danger-40: lighten($brand-danger, lightness($brand-danger) * 0.6);
+
+
+$navbar-height: 80px;
+$navbar-contracted-height: 60px;

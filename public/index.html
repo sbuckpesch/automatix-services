@@ -1,0 +1,341 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ pageTitle }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+    <link rel="icon" href="/img/favicon.png" type="image/png">
+
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/js/bower_components/aos/dist/aos.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>
+    <!--<script src="/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>-->
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-67885326-3', 'auto', {
+            anonymizeIp: true
+        });
+        ga('send', 'pageview');
+        ga('create', 'UA-68101539-3', 'auto', {
+            anonymizeIp: true
+        });
+        ga('send', 'pageview');
+    </script>
+
+</head>
+
+<body class="{{global.deviceType}}">
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<nav id="navbar" class="navbar navbar-fixed-top navbar-light">
+    <div class="container">
+        <a class="navbar-brand pull-xs-right hidden-sm-up" href="/">
+            <img class="img-fluid" src="/img/logo.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+            &#9776;
+        </button>
+        <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+            <div class="navbar-brand hidden-xs-down">
+                <a href="//www.lebensmittelzeitung.net" target="_blank">
+                    <img class="logo1" src="/img/logo_lz.png" alt="Logo">
+                </a>
+                <a href="/">
+                    <img class="logo2" src="/img/logo_digitalmediacoach.png" alt="Logo">
+                </a>
+            </div>
+
+            <a href="#contactForm" class="btn btn-outline-primary pull-xs-right m-l-1">Kontakt</a>
+            <ul class="nav navbar-nav pull-sm-right">
+                <li class="nav-item {{#if kompetenz }}active{{/if}}">
+                    <a href="/kompetenz" class="nav-link">Unsere Kompetenz</a>
+                </li>
+                <li class="nav-item {{#if best-cases }}active{{/if}}">
+                    <a href="/best-cases" class="nav-link">Best Cases</a>
+                </li>
+                <li class="nav-item {{#if banner-formate }}active{{/if}}">
+                    <a href="/banner-formate" class="nav-link">Formate & Preise</a>
+                </li>
+                <li class="nav-item {{#if banner-finder }}active{{/if}}">
+                    <a href="/banner-finder" class="nav-link">Banner-Finder</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    $(window).scroll(function () {
+        if ($(this).scrollTop() !== 0) {
+            $("body").addClass("navbar-contracted")
+        } else {
+            $("body").removeClass("navbar-contracted")
+        }
+    });
+</script>
+
+
+<main class="landingpage">
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-12 p-x-0">
+                {{> slider sliders.header_slider}}
+            </div>
+        </div>
+
+        <!--<a href="#factsSlider" class="btnScrollDown"><span></span>Weiterlesen</a>-->
+
+        <div class="row text-xs-center boxes">
+            {{# boxes }}
+            <div class="col-md-3" >
+                <div class="content p-y-2">
+                    <div class="hoverText" style="display: none;">
+                        <div aa-config="landingpage_boxes_{{inc @index}}_hover-text">{{{ hoverText }}}</div>
+                        <a href="{{ btnLink }}" class="btn btn-white" aa-config="landingpage_boxes_{{inc @index}}_btn-caption">{{{ btnCaption }}}</a>
+                    </div>
+                    <div class="defaultText">
+                        <div aa-config="landingpage_boxes_{{inc @index}}_default-text">{{{ defaultText }}}</div>
+                        <a href="{{ btnLink }}" class="btn btn-outline-primary" aa-config="landingpage_boxes_{{inc @index}}_btn-caption">
+                            {{{ btnCaption }}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{/boxes}}
+        </div>
+        <div id="factsSlider" class="row" data-aos="fade-left">
+            <div class="col-md-12 highlight">
+                <div class="inner-container">
+                    <h2 class="text-md-center p-t-3 p-b-1 text-uppercase font-weight-bold" aa-config="landingpage_facts-slider_title">
+                        {{ sliders.facts_slider.title }}
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row" data-aos="fade-left">
+            <div class="col-md-12 p-x-0">
+                {{> slider sliders.facts_slider }}
+            </div>
+        </div>
+        <div class="row bg-brand-gray-light" data-aos="fade-up" >
+            <div class="inner-container">
+                <div class="col-md-12 highlight text-right">
+                    <h2 class="text-md-center p-t-3 p-b-1 text-uppercase font-weight-bold" aa-config="landingpage_testimonials_title">
+                        {{ testimonials.title }}
+                    </h2>
+                </div>
+                <div class="testimonial p-a-1">
+                    <div class="col-md-12 p-a-2">
+                        <div class="row">
+                            {{# testimonials.first }}
+                            <div class="col-md-6">
+                                <div class="m-x-auto quote {{class}}">
+                                    <div class="title text-primary" aa-config="{{configIdScope}}title">{{title}}</div>
+                                    <div class="content p-t-1" aa-config="{{configIdScope}}text">
+                                        {{text}}
+                                    </div>
+                                    <div class="author">
+                                        - <span aa-config="{{configIdScope}}author">{{author}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/testimonials.first}}
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial p-a-1 collapse" id="collapseTestimonial">
+                    <div class="col-md-12 p-a-2">
+                        <div class="row">
+                            {{# testimonials.second }}
+                            <div class="col-md-6">
+                                <div class="m-x-auto quote {{class}}">
+                                    <div class="title text-primary" aa-config="{{configIdScope}}title">{{title}}</div>
+                                    <div class="content p-t-1" aa-config="{{configIdScope}}text">
+                                        {{text}}
+                                    </div>
+                                    <div class="author">
+                                        - <span aa-config="{{configIdScope}}author">{{author}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/testimonials.second}}
+                        </div>
+                    </div>
+                    <!--<div class="col-md-12 p-a-2">
+                            <div class="row">
+                                {{# testimonials.third }}
+                                    <div class="col-md-6">
+                                        <div class="m-x-auto quote {{class}}">
+                                            <div class="title text-primary" aa-config="{{configIdScope}}title">{{title}}</div>
+                                            <div class="content p-t-1" aa-config="{{configIdScope}}text">
+                                                {{text}}
+                                            </div>
+                                            <div class="author">
+                                                - <span aa-config="{{configIdScope}}author">{{author}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{/testimonials.third}}
+                            </div>
+                        </div>-->
+                </div>
+                <div class="col-md-12 p-b-2">
+                    <div class="text-md-center collapseTestimonial collapsed" data-toggle="collapse"
+                         href="#collapseTestimonial" aria-expanded="false" aria-controls="collapseTestimonial">
+                        <span class="clickable show-more">Weitere Kundenaussagen <i
+                                class="text-primary fa fa-chevron-down"></i></span>
+                        <span class="clickable show-less">Weniger Kundenaussagen <i
+                                class="text-primary fa fa-chevron-up"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{> cta-block cta-block }}
+        {{> download-media download-media-link}}
+        {{> contact-form }}
+    </div>
+</main>
+
+<footer>
+    <div class="container p-y-2">
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/kompetenz">Unsere Kompetenz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/best-cases">Best Cases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/banner-formate">Formate & Preise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/banner-finder">Banner-Finder</a>
+                    </li>
+                </ul>
+                <div class="social-nav p-t-2">
+                    <a class="p-r-1" target="_blank" href="https://www.facebook.com/Lebensmittel.Zeitung"><i class="fa fa-facebook-f"></i></a>
+                    <a class="p-r-1" target="_blank" href="https://twitter.com/LZNETnews"><i class="fa fa-twitter"></i></a>
+                    <a class="p-r-1" target="_blank" href="https://plus.google.com/+LebensmittelzeitungNet"><i class="fa fa-google-plus"></i></a>
+                    <a class="p-r-1" target="_blank" href="http://www.lebensmittelzeitung.net/service/rss"><i class="fa fa-rss"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.lebensmittelzeitung.net/service/kontakt">Kontakt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.lebensmittelzeitung.net/service/agb">AGB</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="http://www.lebensmittelzeitung.net/service/datenschutz">Datenschutz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.lebensmittelzeitung.net/service/impressum">Impressum</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <div class="logo m-y-2">
+                    <img src="/img/dfv_logo.png" alt="">
+                </div>
+                <div class="content">
+                    <p>
+                        Copyright: Deutscher Fachverlag GmbH
+                    </p>
+                    <p>
+                        Anregungen & Kommentare an <a style="color: #fff;" href="mailto:marketing@lebensmittelzeitung.net">marketing@lebensmittelzeitung.net</a>
+                    </p>
+                    <!--<p>
+                        Die Übernahme von vollständigen Artikeln - auch bei Nennung der Quelle - ist nur nach
+                        schriftlicher
+                        Zustimmung von lebensmittelzeitung.net erlaubt.
+                    </p>
+                    <p>
+                        Für den Inhalt von Angeboten, zu denen eine Verbindung per Link möglich ist, und die nicht vom
+                        Deutschen Fachverlag stammen, wird keine Verantwortlichkeit und Haftung übernommen.
+                    </p>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cta" data-mail="{{ configs.contact_mail.value }}" data-route="/mail"></div>
+</footer>
+
+<script>
+    $(document).ready(function () {
+        $('a[href*="#"]:not([href="#"])').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, "swing", function () {
+                        if (target.selector === "#contactForm") {
+                            target.find("input").first().focus()
+                        }
+                    });
+                    return false;
+                }
+            }
+        });
+
+        /*$("#sideNav").sticky({topSpacing:60});*/
+    });
+</script>
+
+<script src="js/react/{{ global.react.ctaFilename }}"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+
+<!--<script src="/js/bower_components/jquery-sticky/jquery.sticky.js"></script>-->
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script>
+    AOS.init();
+    window.aaAsyncInit = function () {
+        AppArena.init({
+            appId: {{ global.appId }},
+        cacheCleanUrl: "{{ global.cleanCacheUrl }}"
+    });
+    };
+    (function (d, s, id) {
+        var js, ajs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.async = true;
+        js.src = "https://cdn-am.app-arena.com/sdk/sdk.min.js";
+        ajs.parentNode.insertBefore(js, ajs);
+    }(document, 'script', 'apparena-jssdk'));
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.3.4/js/tether.min.js"></script>
+<script src="js/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

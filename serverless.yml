@@ -1,0 +1,77 @@
+# Required serverless framework version
+frameworkVersion: ">=1.4"
+
+# Service name
+service: automatix-services
+
+# Provider to deploy functionality tp
+provider:
+  name: aws
+  memory: 1024
+  stage: ${opt:stage, self:custom.defaultStage}
+  profile: ${self:custom.profiles.${self:provider.stage}}
+  region: ${self:provider.config.region}
+  runtime: nodejs4.3
+  timeout: 300
+  environment:
+    STAGE: ${self:provider.stage} # Environment variables can be access in node via 'process.env.STAGE'
+  config: ${self:custom.configs.${self:provider.stage}}
+
+# Customized settings
+custom:
+  defaultStage: production
+  # Configuration files containing settings for different environments
+  configs:
+    dev: ${file(config/dev.yml)}
+    production: ${file(config/production.yml)}
+  # AWS profiles to run deploy to
+  profiles:
+      dev: 'default'
+      production: 'default'
+
+# Lambda functions and settings to deploy
+functions:
+  startReminder:
+    handler: handler.handleReminder
+    role: startReminderRole
+    vpc:
+      securityGroupIds:
+        - ${self:provider.config.vpc.lambdaExecSecurityGroup}
+      subnetIds:
+        - ${self:provider.config.vpc.subnetAPrivate}
+        - ${self:provider.config.vpc.subnetBPrivate}
+    events:
+      - schedule:
+          rate: cron(0 1 * * ? *)
+          enabled: true
+
+# Cloudformation template to deploy
+resources:
+  Resources:
+    startReminderRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: startReminderRole
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action: sts:AssumeRole
+        Policies:
+          - PolicyName: startReminderPolicy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - "logs:CreateLogGroup"
+                    - "logs:CreateLogStream"
+                    - "logs:PutLogEvents"
+                    - "ec2:CreateNetworkInterface"
+                    - "ec2:DescribeNetworkInterfaces"
+                    - "ec2:DeleteNetworkInterface"
+                  Resource:
+                    - '*'

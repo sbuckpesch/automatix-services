@@ -1,0 +1,91 @@
+// Variables
+//
+// Bootstrap variable overwrites
+
+// Table of Contents
+//
+// Colors
+// Options
+// Spacing
+// Body
+// Links
+// Grid breakpoints
+// Grid containers
+// Grid columns
+// Fonts
+// Components
+
+// General variable structure
+//
+// Variable format should follow the `$component-modifier-state-property` order.
+
+// Container
+$container-max-widths: (
+        sm: 576px,
+        md: 720px,
+        lg: 940px,
+        xl: 1560px
+) !default;
+
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+$gray-dark: #333333 !default;
+$gray: #666666 !default;
+$gray-light: #818a91 !default;
+$gray-lighter: #dddddd !default;
+$gray-lightest: #f6f6f6 !default;
+
+$brand-primary: #c4151c !default;
+$brand-secondary: #086f91 !default;
+$brand-focus: #2E9EEB !default;
+$brand-success: #ACC825 !default;
+$brand-info: #67C6EB !default;
+$brand-warning: #DB6B3A !default;
+$brand-danger: #CF3D30 !default;
+$brand-grey-light: #f1f1f1 !default;
+$brand-grey-dark: #262627 !default;
+
+// Custom variables
+$brand-blue-dark: #1C1F42;
+
+// Navigation
+$navbar-light-color: #000 !default;
+$navbar-light-hover-color: $brand-primary !default;
+$navbar-light-active-color: $brand-primary !default;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-flex: false !default;
+$enable-rounded: false !default;
+$enable-shadows: true !default;
+$enable-gradients: true !default;
+$enable-transitions: true !default;
+$enable-hover-media-query: false !default;
+$enable-grid-classes: true !default;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: 'Source Sans Pro', sans-serif !default;
+$font-family-serif: 'Source Serif Pro', serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+$headings-font-family: $font-family-serif !default;
+
+// Buttons
+$btn-secondary-color: #fff !default;
+$btn-secondary-bg: $brand-secondary !default;
+$btn-secondary-border: $btn-secondary-bg !default;
+
+// Forms
+$custom-checkbox-indeterminate-bg: $brand-primary !default;
+$custom-control-checked-indicator-bg: $brand-primary !default;
+$custom-control-focus-indicator-box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem $brand-primary !default;
+$custom-control-active-indicator-bg: lighten($brand-primary, 30%) !default;
+
+@import "../../../../public/js/bower_components/bootstrap/scss/variables";

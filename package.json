@@ -1,0 +1,45 @@
+{
+  "name": "serverless-sms-provider",
+  "version": "1.0.0",
+  "description": "Serverless SMS Provider",
+  "main": "handler.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://vklein@bitbucket.org/apparena/serverless-sms-provider.git"
+  },
+  "keywords": [
+    "serverless",
+    "aws",
+    "lambda",
+    "sns"
+  ],
+  "devDependencies": {
+    "async": "^2.0.0-rc.3",
+    "aws-sdk": "^2.6.7",
+    "chai": "^3.5.0",
+    "dirty-chai": "^1.2.2",
+    "dotenv": "^2.0.0",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "eslint-config-google": "^0.6.0",
+    "eslint-plugin-import": "^1.15.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0",
+    "js-yaml": "^3.6.1",
+    "mocha": "^2.4.5",
+    "nock": "^7.7.2"
+  },
+  "author": "Valentin Klein vk@app-arena.com",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/apparena/serverless-sms-provider#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint . || true",
+    "deploy-push": "cd src/push && serverless deploy",
+    "deploy-user": "cd src/user && serverless deploy",
+    "deploy": "npm run deploy-send"
+  },
+  "dependencies": {
+    "base64-url": "^1.3.2"
+  }
+}

@@ -1,2 +1,9 @@
-# automatix-services
-Automatix cloud microservices, deployable to AWS
+# Automatix Cloud Microservices
+
+Deployable microservices on AWS. 
+
+# Setup
+
+
+# License
+MIT

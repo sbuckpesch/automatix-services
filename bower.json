@@ -1,0 +1,30 @@
+{
+  "name": "Automatix Cloud Microservice Landingpage",
+  "version": "1.0.0",
+  "authors": [
+    "Sebastian Buckpesch <s.buckpesch@gmail.com>"
+  ],
+  "description": "A landingpage to promote a single webservice",
+  "main": "index.html",
+  "keywords": [
+    "aws",
+    "serverless",
+    "api",
+    "microservice"
+  ],
+  "license": "Proprietary",
+  "homepage": "https://www.app-arena.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "bootstrap": "^4",
+    "font-awesome": "^4",
+    "jquery": "^2.0.0"
+  }
+}
