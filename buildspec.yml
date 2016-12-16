@@ -15,5 +15,6 @@ phases:
     commands:
       - echo Build completed on `date`
 artifacts:
+  type: zip
   files:
-    - target/myArtifact.zip
+    - *
